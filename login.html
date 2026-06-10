@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Registration Forms</title>
+  <style>
+    :root { 
+      --primary-color: #4a90e2; 
+      --text-color: #333;
+       --white: #fff;
+       }
+    body {
+       font-family: sans-serif;
+        background: linear-gradient(135deg, #e5e7e9, #f6f4f6);
+         display: flex; 
+         justify-content: center; 
+         align-items: center;
+          height: 100vh;
+          margin: 0; 
+        }
+    .form-container {
+       background: var(--white);
+        width: 400px; padding: 30px;
+         border-radius: 10px; 
+         box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+         }
+    .form-toggle {
+       display: flex;
+        margin-bottom: 25px;
+         border-bottom: 2px solid #ddd;
+         }
+    .form-toggle button { 
+      flex: 1;
+       padding: 10px;
+        background: none; 
+        border: none;
+         font-size: 18px;
+          font-weight: bold; 
+          color: #999;
+           cursor: pointer;
+           }
+    .form-toggle button.active {
+       color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+       }
+    .form-panel {
+       display: none;
+       }
+    .form-panel.active {
+       display: block;
+       }
+    .form-group {
+       margin-bottom: 20px;
+       }
+    .form-group label {
+       display: block; margin-bottom: 8px;
+       }
+    .form-group input { 
+      width: 100%;
+       padding: 12px;
+        border: 1px solid #ccc;
+         border-radius: 5px; 
+         box-sizing: border-box;
+         }
+    .form-group button {
+       width: 100%;
+        padding: 12px; 
+        background: var(--primary-color);
+         color: var(--white);
+          border: none;
+           border-radius: 5px;
+            font-weight: bold;
+             cursor: pointer; 
+            }
+    .form-footer { 
+      text-align: center; 
+      font-size: 14px;
+     }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-toggle">
+      <button class="active" onclick="switchForm('login')">Login</button>
+      <button onclick="switchForm('register')">Register</button>
+    </div>
+    <div id="login-panel" class="form-panel active">
+      <form><div class="form-group"><input type="email" placeholder="Email" required></div><div class="form-group"><input type="password" placeholder="Password" required></div><button type="submit">Login</button></form>
+    </div>
+    <div id="register-panel" class="form-panel">
+      <form><div class="form-group"><input type="text" placeholder="Full Name" required></div><div class="form-group"><input type="email" placeholder="Email" required></div><div class="form-group"><input type="password" placeholder="Password" required></div><button type="submit">Register</button></form>
+    </div>
+  </div>
+  <script>
+    function switchForm(f) {
+      document.query Selector All('.form-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector All('.form-toggle button').forEach(b => b.classList.remove('active'));
+      document.getElementById(`${f}-panel`).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
+
